@@ -11,7 +11,6 @@ public partial class DisableAchievementsPlugin : BaseUnityPlugin
         Harmony harmony = new(Id);
         harmony.PatchAll();
 
-        // Put your initialization logic here
         Logger.LogInfo($"Plugin {Name} ({Id}) has loaded!");
     }
 }
