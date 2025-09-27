@@ -1,9 +1,9 @@
 using BepInEx;
 using HarmonyLib;
 
-namespace Silksong.DisableAchievements;
+namespace DisableAchievements;
 
-[BepInAutoPlugin(id: "com.spacemonkeyy.silksong_disableachievements")]
+[BepInAutoPlugin(id: "com.spacemonkeyy.disableachievements")]
 public partial class DisableAchievementsPlugin : BaseUnityPlugin
 {
     private void Awake()

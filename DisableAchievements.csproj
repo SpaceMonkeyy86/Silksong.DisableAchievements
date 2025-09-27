@@ -19,7 +19,7 @@
 
   <PropertyGroup>
     <!--These properties will control the generated plugin info. Version is also used by various parts of the build system.-->
-    <AssemblyTitle>Silksong.DisableAchievements</AssemblyTitle>
+    <AssemblyTitle>DisableAchievements</AssemblyTitle>
     <Version>1.0.0</Version>
   </PropertyGroup>
 
