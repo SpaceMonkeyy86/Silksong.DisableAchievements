@@ -10,8 +10,6 @@ public partial class DisableAchievementsPlugin : BaseUnityPlugin
     {
         Harmony harmony = new(Id);
         harmony.PatchAll();
-
-        Logger.LogInfo($"Plugin {Name} ({Id}) has loaded!");
     }
 }
 
@@ -38,6 +36,30 @@ public class MenuStyleUnlock_Unlock_Patch
 {
     public static bool Prefix()
     {
+        return false;
+    }
+}
+
+[HarmonyPatch(typeof(GameManager), nameof(GameManager.SetStatusRecordInt))]
+public class GameManager_SetStatusRecordInt_Patch
+{
+    public static bool Prefix(string key)
+    {
+        if (key.StartsWith("Rec") && key.EndsWith("Mode"))
+        {
+            return false;
+        }
+
+        return true;
+    }
+}
+
+[HarmonyPatch(typeof(SteelSoulUnlockSequence), nameof(SteelSoulUnlockSequence.ShouldShow), MethodType.Getter)]
+public class SteelSoulUnlockSequence_ShouldShow_Patch
+{
+    public static bool Prefix(ref bool __result)
+    {
+        __result = false;
         return false;
     }
 }
